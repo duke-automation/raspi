@@ -78,11 +78,3 @@ raspi-05:
     <<: *host_defaults
   interfaces:
     <<: *interfaces_default
-
-mojo:
-  recipients:
-    <<: *recipient_defaults
-  hosts:
-    <<: *host_defaults
-  interfaces:
-    <<: *interfaces_default
