@@ -40,4 +40,4 @@ Scripts for monitoring/trending wireless connectivity using Raspberry PIs.
 
 ### License
 
-[MIT License](https://github.com/duke-automation/raspi/blob/master/LICENSE)
+[GNU License](https://github.com/duke-automation/raspi/blob/master/LICENSE)
