@@ -2,7 +2,6 @@
 
 require 'resolv'
 require 'socket'
-require 'pp'
 require 'optparse'
 require 'timeout'
 require 'syslog/logger'
@@ -181,7 +180,6 @@ loop do
       # dnsobj.getaddress(lh)
       # dnsobj.getresources "#{options[:dns_lookup]}", Resolv::DNS::Resource::IN::A
       dnsobj.getaddress(site)
-      # pp res
       et = Time.now
       # rt = ((et - st)*1000).round(0)
       rt = ((et - st)*1000).to_i
