@@ -1,0 +1,14 @@
+# restart nw-metrics.rb if not running
+0,10,20,30,40,50 * * * * /home/raspi/wireless-test/watch.sh > /tmp/watch.txt 2>&1
+5,15,25,35,45,55 * * * * /home/raspi/wireless-test/watch.sh > /tmp/watch.txt 2>&1
+# email IP addresses (optional)
+# * * * * * /home/raspi/wireless-test/whats-my-ip.sh > /tmp/whats-my-ip.txt 2>&1
+# * * * * * /home/raspi/wireless-test/whats-my-wired-ip.sh > /tmp/whats-my-wired-ip.txt 2>&1
+# record wireless stats via syslog
+* * * * * /home/raspi/wireless-test/iwconfig-stats.pl > /tmp/iwconfig-syslog.txt 2>&1
+* * * * * /home/raspi/wireless-test/wireless-stats.pl > /tmp/wireless-syslog.txt 2>&1
+# reset interface if wired down
+0,30 * * * * /home/raspi/wireless-test/restart-wired.sh > /var/tmp/restart-wired.txt 2>&1
+# reset interface if wireless down
+0,10,20,30,40,50 * * * * /home/raspi/wireless-test/restart-wireless.sh > /var/tmp/restart-wireless.txt 2>&1
+5,15,25,35,45,55 * * * * /home/raspi/wireless-test/restart-wireless.sh > /var/tmp/restart-wireless.txt 2>&1

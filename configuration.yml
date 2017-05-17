@@ -1,0 +1,88 @@
+# INTERFACES
+interfaces_default: &interfaces_default
+  wired: eth0
+  wireless: wlan0
+
+# MAIL RECIPIENTS
+recipient_defaults: &recipient_defaults
+  debug_recipients:
+    - user@domain.edu
+
+  process_recipients:
+    - user@domain.edu
+
+  ip_recipients:
+    - user@domain.edu
+
+# HOST/IP INFO
+host_defaults: &host_defaults
+  ping_sites:
+    - external-site.com
+    - internal-site.edu
+
+  http_sites:
+    - external-site.com
+    - internal-site.edu
+
+  dns_sites:
+
+  # IPs to test wireless connectivity (static routes)
+  wireless_ips:
+    - 10.1.1.50
+    - 10.1.1.51
+    - 10.1.1.52
+
+  # IPs to test wired connectivy and forward syslog (static routes)
+  wired_ips:
+    - 192.168.1.50
+    - 192.168.1.51
+    - 192.168.1.52
+
+# PI specific overrides
+raspi-01:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
+
+raspi-02:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
+
+raspi-03:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
+
+raspi-04:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
+
+raspi-05:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
+
+mojo:
+  recipients:
+    <<: *recipient_defaults
+  hosts:
+    <<: *host_defaults
+  interfaces:
+    <<: *interfaces_default
